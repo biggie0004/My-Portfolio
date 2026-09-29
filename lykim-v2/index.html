@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lykim Meng — Software Engineer</title>
+<meta name="description" content="Software Engineering student and aspiring full-stack developer. Building practical software that solves real problems.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo">lm<span class="logo-accent">.</span></a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#about"        class="nl">About</a>
+      <a href="#skills"       class="nl">Skills</a>
+      <a href="#projects"     class="nl">Projects</a>
+      <a href="#experience"   class="nl">Experience</a>
+      <a href="#education"    class="nl">Education</a>
+      <a href="#contact"      class="nl">Contact</a>
+    </nav>
+
+    <div class="nav-end">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+      <a href="#contact" class="btn-hire">Available for hire</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" role="dialog" aria-label="Mobile navigation">
+  <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  <a href="#about"       class="dl">About</a>
+  <a href="#skills"      class="dl">Skills</a>
+  <a href="#projects"    class="dl">Projects</a>
+  <a href="#experience"  class="dl">Experience</a>
+  <a href="#education"   class="dl">Education</a>
+  <a href="#contact"     class="dl">Contact</a>
+</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="wrap hero-wrap">
+
+    <div class="hero-left">
+      <div class="hero-intro reveal">
+        <div class="hero-avatar-wrap">
+          <img src="assets/avatar.jpg" alt="Lykim Meng" class="hero-avatar">
+          <span class="hero-avatar-dot" title="Open to opportunities"></span>
+        </div>
+        <div class="hero-badge"><span class="badge-dot"></span>Open to internships &amp; opportunities</div>
+      </div>
+
+      <h1 class="hero-h1 reveal">
+        Hi, I'm<br>
+        <span class="hero-name">Lykim Meng</span>
+      </h1>
+
+      <p class="hero-role reveal">
+        <span id="typed"></span><span class="cursor" aria-hidden="true">|</span>
+      </p>
+
+      <p class="hero-desc reveal">
+        Passionate about software development, web technologies, and creating
+        practical applications that solve real-world problems.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="assets/Lykim_Meng_CV.pdf" download class="btn-primary">
+          <i class="fa-solid fa-arrow-down"></i> Download CV
+        </a>
+        <a href="#contact" class="btn-outline">
+          Contact Me <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-n">6+</span>
+          <span class="stat-l">Projects built</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-n">6+</span>
+          <span class="stat-l">Languages &amp; tools</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-n">1</span>
+          <span class="stat-l">Startup experience</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code window — the signature element -->
+    <div class="hero-right reveal">
+      <div class="code-window">
+        <div class="cw-bar">
+          <span class="cw-dot cw-red"></span>
+          <span class="cw-dot cw-yellow"></span>
+          <span class="cw-dot cw-green"></span>
+          <span class="cw-file">profile.js</span>
+        </div>
+        <pre class="cw-body"><code><span class="tk-kw">const</span> <span class="tk-name">lykim</span> <span class="tk-op">=</span> <span class="tk-brace">{</span>
+  name<span class="tk-op">:</span> <span class="tk-str">"Lykim Meng"</span><span class="tk-op">,</span>
+  role<span class="tk-op">:</span> <span class="tk-str">"Software Engineering Student"</span><span class="tk-op">,</span>
+  university<span class="tk-op">:</span> <span class="tk-str">"Limkokwing University"</span><span class="tk-op">,</span>
+  stack<span class="tk-op">:</span> <span class="tk-brace">[</span>
+    <span class="tk-str">"JavaScript"</span><span class="tk-op">,</span> <span class="tk-str">"Python"</span><span class="tk-op">,</span>
+    <span class="tk-str">"C#"</span><span class="tk-op">,</span> <span class="tk-str">"HTML/CSS"</span><span class="tk-op">,</span> <span class="tk-str">"SQL"</span>
+  <span class="tk-brace">]</span><span class="tk-op">,</span>
+  interests<span class="tk-op">:</span> <span class="tk-brace">[</span>
+    <span class="tk-str">"Full-Stack Dev"</span><span class="tk-op">,</span>
+    <span class="tk-str">"Mobile Apps"</span><span class="tk-op">,</span>
+    <span class="tk-str">"UI/UX Design"</span>
+  <span class="tk-brace">]</span><span class="tk-op">,</span>
+  available<span class="tk-op">:</span> <span class="tk-bool">true</span>
+<span class="tk-brace">}</span>
+
+<span class="tk-cm">// Always learning something new</span>
+<span class="tk-kw">export default</span> lykim<span class="tk-op">;</span>
+</code></pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="sect" id="about">
+  <div class="wrap">
+    <div class="sh reveal"><span class="sh-label">About</span><h2 class="sh-title">Who I am</h2></div>
+
+    <div class="about-layout">
+      <div class="about-photo-wrap reveal">
+        <div class="about-photo-card">
+          <div class="about-photo-frame">
+            <img src="assets/profile.jpg" alt="Lykim Meng" class="about-photo">
+            <div class="about-photo-tag">
+              <span class="tag-status-dot"></span>
+              <span>Software Engineering</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text reveal">
+          <p class="about-lead">
+            I'm a Software Engineering student at <strong>Limkokwing University</strong> building
+            real skills across the full stack — from pixel-level interfaces to databases and system logic.
+          </p>
+          <p>
+            My current toolkit spans <strong>HTML, CSS, JavaScript, C#, Python, and SQL</strong>, with
+            hands-on exploration in <strong>Flutter</strong> for mobile. I'm drawn to projects where design
+            meets engineering — software that's thoughtful, not just functional.
+          </p>
+          <p>
+            I'm actively expanding into <strong>web development, mobile apps, UI/UX design,</strong>
+            and broader software engineering — and I treat every project as a chance to solve something real
+            and learn something new.
+          </p>
+        </div>
+
+        <div class="about-cards reveal">
+          <div class="acard">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <span class="acard-label">Location</span>
+              <span class="acard-val">Limkokwing University</span>
+            </div>
+          </div>
+          <div class="acard">
+            <i class="fa-solid fa-briefcase"></i>
+            <div>
+              <span class="acard-label">Status</span>
+              <span class="acard-val">Open to internships</span>
+            </div>
+          </div>
+          <div class="acard">
+            <i class="fa-solid fa-code"></i>
+            <div>
+              <span class="acard-label">Focus</span>
+              <span class="acard-val">Full-Stack &amp; Mobile</span>
+            </div>
+          </div>
+          <div class="acard">
+            <i class="fa-solid fa-rocket"></i>
+            <div>
+              <span class="acard-label">Mindset</span>
+              <span class="acard-val">Always learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="sect sect-alt" id="skills">
+  <div class="wrap">
+    <div class="sh reveal"><span class="sh-label">Skills</span><h2 class="sh-title">What I work with</h2></div>
+
+    <div class="skills-grid">
+
+      <div class="skill-col reveal">
+        <h3 class="skill-col-title"><i class="fa-solid fa-code"></i> Programming</h3>
+        <div class="tag-cloud">
+          <span class="stag stag-hi">HTML5</span>
+          <span class="stag stag-hi">CSS3</span>
+          <span class="stag stag-hi">JavaScript</span>
+          <span class="stag stag-mid">Python</span>
+          <span class="stag stag-mid">C#</span>
+          <span class="stag stag-mid">SQL</span>
+        </div>
+        <div class="skill-levels">
+          <div class="sl-row">
+            <div class="sl-bar" data-p="90"></div>
+            <span class="sl-name">HTML / CSS</span>
+          </div>
+          <div class="sl-row">
+            <div class="sl-bar" data-p="75"></div>
+            <span class="sl-name">JavaScript</span>
+          </div>
+          <div class="sl-row">
+            <div class="sl-bar" data-p="75"></div>
+            <span class="sl-name">Python</span>
+          </div>
+          <div class="sl-row">
+            <div class="sl-bar" data-p="70"></div>
+            <span class="sl-name">C#</span>
+          </div>
+          <div class="sl-row">
+            <div class="sl-bar" data-p="65"></div>
+            <span class="sl-name">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-col reveal">
+        <h3 class="skill-col-title"><i class="fa-solid fa-toolbox"></i> Tools &amp; Frameworks</h3>
+        <div class="tool-list">
+          <div class="tool-row">
+            <span class="tool-icon"><i class="fa-solid fa-code"></i></span>
+            <span class="tool-name">VS Code</span>
+            <span class="tool-level">Primary IDE</span>
+          </div>
+          <div class="tool-row">
+            <span class="tool-icon"><i class="fa-brands fa-microsoft"></i></span>
+            <span class="tool-name">Visual Studio</span>
+            <span class="tool-level">C# / .NET</span>
+          </div>
+          <div class="tool-row">
+            <span class="tool-icon"><i class="fa-brands fa-git-alt"></i></span>
+            <span class="tool-name">Git &amp; GitHub</span>
+            <span class="tool-level">Version control</span>
+          </div>
+          <div class="tool-row">
+            <span class="tool-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+            <span class="tool-name">Flutter</span>
+            <span class="tool-level">Beginner</span>
+          </div>
+          <div class="tool-row">
+            <span class="tool-icon"><i class="fa-brands fa-figma"></i></span>
+            <span class="tool-name">Figma</span>
+            <span class="tool-level">UI design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-col reveal">
+        <h3 class="skill-col-title"><i class="fa-solid fa-people-group"></i> Soft Skills</h3>
+        <div class="soft-list">
+          <div class="soft-item">
+            <i class="fa-solid fa-handshake"></i>
+            <div>
+              <span class="soft-name">Teamwork</span>
+              <span class="soft-desc">Collaborative, communicative, reliable</span>
+            </div>
+          </div>
+          <div class="soft-item">
+            <i class="fa-solid fa-comments"></i>
+            <div>
+              <span class="soft-name">Communication</span>
+              <span class="soft-desc">Clear, direct, audience-aware</span>
+            </div>
+          </div>
+          <div class="soft-item">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <div>
+              <span class="soft-name">Problem Solving</span>
+              <span class="soft-desc">Methodical, persistent, creative</span>
+            </div>
+          </div>
+          <div class="soft-item">
+            <i class="fa-solid fa-diagram-project"></i>
+            <div>
+              <span class="soft-name">Project Management</span>
+              <span class="soft-desc">Organised, deadline-driven</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="sect" id="projects">
+  <div class="wrap">
+    <div class="sh reveal"><span class="sh-label">Projects</span><h2 class="sh-title">Things I've built</h2></div>
+
+    <div class="proj-grid">
+
+      <article class="pcard reveal">
+        <div class="pcard-img">
+          <img src="assets/motorbike-fixer.png" alt="Motorbike Fixer roadside rescue platform" loading="lazy">
+          <span class="pcard-type">Full-Stack Web App</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Motorbike Fixer</h3>
+          <p>24/7 on-demand roadside motorbike rescue and dispatch platform connecting riders with verified repair garages across Phnom Penh.</p>
+          <ul class="pcard-feats">
+            <li>Real-time dispatch (Socket.IO)</li>
+            <li>GPS distance &amp; callout fee engine</li>
+            <li>Multi-role RBAC portals</li>
+            <li>Live status &amp; ETA tracking</li>
+          </ul>
+          <div class="pcard-stack">
+            <code>Node.js</code><code>TypeScript</code><code>Express</code><code>Socket.IO</code><code>SQLite</code>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=900&auto=format&fit=crop" alt="Retail POS and inventory system" loading="lazy">
+          <span class="pcard-type">Desktop App</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Clothing Store Sales System</h3>
+          <p>Desktop application replacing manual retail record-keeping with fast, reliable inventory, sales, and customer management.</p>
+          <ul class="pcard-feats">
+            <li>Inventory management</li>
+            <li>Sales tracking</li>
+            <li>Customer records</li>
+            <li>Reporting</li>
+          </ul>
+          <div class="pcard-stack">
+            <code>C#</code><code>SQL</code><code>.NET</code>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=900&auto=format&fit=crop" alt="Hotel lobby and booking" loading="lazy">
+          <span class="pcard-type">Booking System</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Hotel Room Booking System</h3>
+          <p>Reservation platform for guests to check availability and book rooms, with a staff-side dashboard for room and booking management.</p>
+          <ul class="pcard-feats">
+            <li>Reservation management</li>
+            <li>Room availability</li>
+            <li>Customer booking flow</li>
+            <li>Admin dashboard</li>
+          </ul>
+          <div class="pcard-stack">
+            <code>C#</code><code>SQL</code><code>Desktop</code>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=900&auto=format&fit=crop" alt="Game development, code editor" loading="lazy">
+          <span class="pcard-type">Game Dev</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Plants vs. Zombies (Python)</h3>
+          <p>From-scratch recreation of the tower-defense classic — built to explore object-oriented design and real-time game logic in Python.</p>
+          <ul class="pcard-feats">
+            <li>Pygame engine</li>
+            <li>OOP architecture</li>
+            <li>Game mechanics</li>
+            <li>Collision detection</li>
+          </ul>
+          <div class="pcard-stack">
+            <code>Python</code><code>Pygame</code><code>OOP</code>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard-img">
+          <img src="assets/flyer rentdora front page final.png" alt="Traditional Cambodian attire, fashion rental" loading="lazy">
+          <span class="pcard-type">Mobile App</span>
+        </div>
+        <div class="pcard-body">
+          <h3>RentDora</h3>
+          <p>Fashion rental marketplace app for traditional and modern attire — browse, book, and manage rentals from request to return, with trust scores built on verified reviews.</p>
+          <ul class="pcard-feats">
+            <li>Fashion marketplace</li>
+            <li>Rental request & booking flow</li>
+            <li>Smart filters & recommendations</li>
+            <li>Trust scores & reviews</li>
+          </ul>
+          <div class="pcard-stack">
+            <code>Figma</code><code>UI/UX Design</code><code>Product Design</code>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard-img">
+          <img src="assets/ygtech-store.png" alt="YG Tech Store e-commerce homepage" loading="lazy">
+          <span class="pcard-type">E-Commerce</span>
+        </div>
+        <div class="pcard-body">
+          <h3>YG Tech Store</h3>
+          <p>E-commerce storefront for tech products, with a featured-products grid, cart flow, and a hero built to drive shoppers toward new arrivals.</p>
+          <ul class="pcard-feats">
+            <li>Product catalog</li>
+            <li>Add-to-cart flow</li>
+            <li>Category tagging</li>
+            <li>Responsive storefront</li>
+          </ul>
+          <div class="pcard-stack">
+            <code>HTML</code><code>CSS</code><code>JavaScript</code>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section class="sect sect-alt" id="experience">
+  <div class="wrap">
+    <div class="sh reveal"><span class="sh-label">Experience</span><h2 class="sh-title">Where I've worked</h2></div>
+
+    <div class="exp-card reveal">
+      <div class="exp-left">
+        <div class="exp-logo"><i class="fa-solid fa-building-columns"></i></div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-meta">
+          <h3>Startup Member</h3>
+          <span class="exp-company">DeeVork</span>
+        </div>
+        <p>Collaborated with cross-functional teams on innovative software projects, taking part in project planning and hands-on software development from early concept through implementation.</p>
+        <div class="exp-tags">
+          <span>Team Collaboration</span>
+          <span>Software Development</span>
+          <span>Project Planning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section class="sect" id="education">
+  <div class="wrap">
+    <div class="sh reveal"><span class="sh-label">Education</span><h2 class="sh-title">Academic background</h2></div>
+
+    <div class="edu-card reveal">
+      <div class="edu-left">
+        <div class="edu-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+      </div>
+      <div class="edu-body">
+        <h3>Bachelor of Software Engineering</h3>
+        <p class="edu-uni">Limkokwing University</p>
+        <p class="edu-grad">Expected Graduation: <span class="editable" title="Update this date">[Add expected graduation year]</span></p>
+        <p class="edu-note">Coursework spanning software architecture, OOP, databases, web development, and mobile application development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATES ===== -->
+<section class="sect sect-alt" id="certificates">
+  <div class="wrap">
+    <div class="sh reveal"><span class="sh-label">Certificates</span><h2 class="sh-title">Recognition</h2></div>
+
+    <div class="cert-grid reveal">
+      <div class="cert-ph"><i class="fa-regular fa-certificate"></i><span>Certificate coming soon</span></div>
+      <div class="cert-ph"><i class="fa-regular fa-certificate"></i><span>Certificate coming soon</span></div>
+      <div class="cert-ph"><i class="fa-regular fa-certificate"></i><span>Certificate coming soon</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="sect" id="contact">
+  <div class="wrap">
+    <div class="sh reveal"><span class="sh-label">Contact</span><h2 class="sh-title">Let's connect</h2></div>
+
+    <div class="contact-wrap">
+      <p class="contact-lead reveal">Open to internships, freelance projects, and conversations about software. Reach out through whichever works best for you.</p>
+
+      <div class="contact-links reveal">
+        <a href="mailto:lykimmeng@example.com" class="clink">
+          <i class="fa-solid fa-envelope"></i>
+          <div><span class="clink-label">Email</span><span class="clink-val">lykimmeng@example.com</span></div>
+          <i class="fa-solid fa-arrow-right clink-arrow"></i>
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noopener" class="clink">
+          <i class="fa-brands fa-github"></i>
+          <div><span class="clink-label">GitHub</span><span class="clink-val">View my code</span></div>
+          <i class="fa-solid fa-arrow-right clink-arrow"></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" class="clink">
+          <i class="fa-brands fa-linkedin"></i>
+          <div><span class="clink-label">LinkedIn</span><span class="clink-val">Connect professionally</span></div>
+          <i class="fa-solid fa-arrow-right clink-arrow"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" rel="noopener" class="clink">
+          <i class="fa-brands fa-facebook"></i>
+          <div><span class="clink-label">Facebook</span><span class="clink-val">Find me on Facebook</span></div>
+          <i class="fa-solid fa-arrow-right clink-arrow"></i>
+        </a>
+        <a href="https://t.me/" target="_blank" rel="noopener" class="clink">
+          <i class="fa-brands fa-telegram"></i>
+          <div><span class="clink-label">Telegram</span><span class="clink-val">Message directly</span></div>
+          <i class="fa-solid fa-arrow-right clink-arrow"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p class="footer-copy">&copy; <span id="yr"></span> Lykim Meng. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="mailto:lykimmeng@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/"   target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://t.me/"         target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+    </div>
+    <p class="footer-credit">Designed &amp; Developed by Lykim Meng</p>
+  </div>
+</footer>
+
+<button class="btt" id="btt" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
+</body>
+</html>
