@@ -21,6 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCanvasColors();
   });
 
+  /* ── Cursor spotlight ──────────────────────────────────── */
+  const spotlight = document.getElementById('cursorSpotlight');
+  if (spotlight && !prefersNoMotion) {
+    let spotX = -999, spotY = -999;
+    document.addEventListener('mousemove', e => {
+      spotX = e.clientX;
+      spotY = e.clientY;
+      spotlight.style.left = spotX + 'px';
+      spotlight.style.top = spotY + 'px';
+    }, { passive: true });
+    document.addEventListener('mouseleave', () => {
+      spotlight.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      spotlight.style.opacity = '1';
+    });
+  }
+
   /* ── Sticky nav & back-to-top ──────────────────────────── */
   const nav = document.getElementById('nav');
   const btt = document.getElementById('btt');
@@ -88,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Aspiring Full-Stack Developer',
     'Python & C# Developer',
     'UI/UX Enthusiast',
+    'Adobe Illustrator Designer',
     'Problem Solver'
   ];
 
@@ -162,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── 3D Tilt on project & skill cards ─────────────────── */
   if (!prefersNoMotion) {
-    const tiltTargets = document.querySelectorAll('.pcard, .skill-col, .about-photo-card');
+    const tiltTargets = document.querySelectorAll('.pcard, .skill-col, .about-photo-card, .exp-card, .edu-card');
 
     tiltTargets.forEach(card => {
       card.addEventListener('mousemove', e => {
@@ -171,10 +190,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const y = e.clientY - rect.top;
         const cx = rect.width / 2;
         const cy = rect.height / 2;
-        const rotX = ((y - cy) / cy) * -8;
-        const rotY = ((x - cx) / cx) * 8;
+        const rotX = ((y - cy) / cy) * -7;
+        const rotY = ((x - cx) / cx) * 7;
 
-        card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(8px) scale(1.02)`;
+        card.style.transform = `perspective(1100px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(10px) scale(1.02)`;
       });
 
       card.addEventListener('mouseleave', () => {
@@ -184,6 +203,42 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* ── Project Filters ───────────────────────────────────── */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pcards = document.querySelectorAll('.pcard');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      pcards.forEach(card => {
+        const cat = card.dataset.category;
+        const show = filter === 'all' || cat === filter;
+
+        if (show) {
+          card.style.display = 'flex';
+          // Trigger reflow for animation
+          void card.offsetWidth;
+          card.style.opacity = '1';
+          card.style.transform = '';
+          card.style.pointerEvents = 'auto';
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.92) translateY(20px)';
+          card.style.pointerEvents = 'none';
+          setTimeout(() => {
+            if (btn.dataset.filter !== 'all' && card.dataset.category !== btn.dataset.filter) {
+              card.style.display = 'none';
+            }
+          }, 350);
+        }
+      });
+    });
+  });
 
   /* ── Particle Canvas Background ─────────────────────────── */
   const canvas = document.getElementById('bg-canvas');
