@@ -240,6 +240,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── Robot mascot (PIXEL.ai) click-to-dance ────────────── */
+  const robot = document.getElementById('robotMascot');
+  if (robot) {
+    let dancing = false;
+    robot.addEventListener('click', () => {
+      if (dancing) return;
+      dancing = true;
+      robot.classList.add('rb-dance');
+      setTimeout(() => {
+        robot.classList.remove('rb-dance');
+        dancing = false;
+      }, 1050);
+    });
+  }
+
   /* ── Particle Canvas Background ─────────────────────────── */
   const canvas = document.getElementById('bg-canvas');
   if (!canvas || prefersNoMotion) return;
